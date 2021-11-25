@@ -1,3 +1,7 @@
+<?php
+	declare(strict_types = 1);
+	include 'includes/class-autoload.inc.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -7,10 +11,17 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<?php
-		require_once "includes/newClass.inc.php";
-			$pet01 = new Pet();
-			echo $pet01->owner();
-		?>
+		<form action="includes/calc.inc.php" method="post">
+			<p>My own calculator!</p>
+			<input type="text" name="num1" placehlder="First number">
+			<select name="oper" id="oper">
+				<option value="add">Addition</option>
+				<option value="sub">Substraction</option>
+				<option value="div">Division</option>
+				<option value="mul">Multiplication</option>
+			</select>
+			<input type="number" name="num2" placeholder="Second number">
+			<button type="submit" name="submit">Calculate</button>
+		</form>
 	</body>
 </html>
