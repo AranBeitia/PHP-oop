@@ -12,6 +12,5 @@
 			$pet01 = new Pet();
 			echo $pet01->owner();
 		?>
-		<h1>hi</h1>
 	</body>
 </html>
