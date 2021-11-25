@@ -1,15 +1,17 @@
 <?php
 
-class Person {
-	// Properties and methods goes here
-	private $first = "Daniel";
-	private $last = "Nielsen";
-	private $age = "28";
-}
+	declare(strict_types = 1);
+	include 'class-autoload.inc.php';
 
-class Pet {
-	public function owner (){
-		$a = "Hi there!";
-		return $a;
+	$oper = $_POST["oper"];
+	$num1 = $_POST["num1"];
+	$num2 = $_POST["num2"];
+
+	$calc = new Calc($oper, (int)$num1, (int)$num2 );
+
+	try {
+		echo $calc->calculator();
+	} catch (TypeError $e) {
+		echo "Error!: " . $e->getMessage();
 	}
-}
+?>
